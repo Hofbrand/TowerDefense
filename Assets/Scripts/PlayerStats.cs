@@ -9,6 +9,8 @@ public class PlayerStats : MonoBehaviour
 
     public static int lives;
     public int startLives = 20;
+
+    public static int Rounds;
     // Start is called before the first frame update
     void Start()
     {
