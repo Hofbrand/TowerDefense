@@ -17,10 +17,7 @@ public class GameManager : MonoBehaviour
     {
         if (GameIsOver)
             return;
-        if (Input.GetKeyDown("e"))
-        {
-            EndGame();
-        }
+      
         if (PlayerStats.lives <= 0)
         {
             EndGame();

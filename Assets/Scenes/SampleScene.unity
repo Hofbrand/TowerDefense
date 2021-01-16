@@ -704,7 +704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startMoney: 400
-  startLives: 1
+  startLives: 20
 --- !u!114 &80233391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2347,6 +2347,7 @@ GameObject:
   - component: {fileID: 254349054}
   - component: {fileID: 254349053}
   - component: {fileID: 254349052}
+  - component: {fileID: 254349055}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -2467,6 +2468,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254349050}
   m_CullTransparentMesh: 0
+--- !u!225 &254349055
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254349050}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &269863541
 GameObject:
   m_ObjectHideFlags: 0
@@ -2484,7 +2497,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &269863542
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2528,7 +2541,7 @@ Animator:
   m_GameObject: {fileID: 269863541}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dff40776dd11cfe44af46098edb77c95, type: 2}
+  m_Controller: {fileID: 9100000, guid: db705c56a2684904a973f2ac8ea20f38, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -8559,6 +8572,7 @@ GameObject:
   - component: {fileID: 873185277}
   - component: {fileID: 873185276}
   - component: {fileID: 873185275}
+  - component: {fileID: 873185278}
   m_Layer: 5
   m_Name: Retry
   m_TagString: Untagged
@@ -8679,6 +8693,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873185273}
   m_CullTransparentMesh: 0
+--- !u!225 &873185278
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873185273}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &898773338
 GameObject:
   m_ObjectHideFlags: 0
@@ -9281,6 +9307,7 @@ GameObject:
   - component: {fileID: 995141696}
   - component: {fileID: 995141695}
   - component: {fileID: 995141694}
+  - component: {fileID: 995141697}
   m_Layer: 5
   m_Name: GameOverText
   m_TagString: Untagged
@@ -9364,6 +9391,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 995141692}
   m_CullTransparentMesh: 0
+--- !u!225 &995141697
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995141692}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1001681746
 GameObject:
   m_ObjectHideFlags: 0
@@ -9812,6 +9851,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1041789523}
+  - component: {fileID: 1041789524}
   m_Layer: 5
   m_Name: RoundSurvived
   m_TagString: Untagged
@@ -9840,6 +9880,18 @@ RectTransform:
   m_AnchoredPosition: {x: -32.000008, y: 198.00003}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1041789524
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041789522}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1043499109
 GameObject:
   m_ObjectHideFlags: 0
