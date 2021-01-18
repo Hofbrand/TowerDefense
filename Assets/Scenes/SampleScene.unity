@@ -819,6 +819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildEffect: {fileID: 4347212290489784117, guid: 42e73914fe40d984bb32f993c7bf9fef, type: 3}
+  sellEffect: {fileID: 4347212290489784117, guid: 8870b8816775fcd4a859d5a112cad5e6, type: 3}
   turretUI: {fileID: 2110392191}
 --- !u!114 &80233390
 MonoBehaviour:
@@ -8026,7 +8027,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2110392191}
         m_TargetAssemblyTypeName: TurretUI, Assembly-CSharp
-        m_MethodName: Upgrade
+        m_MethodName: Sell
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19781,6 +19782,7 @@ MonoBehaviour:
   ui: {fileID: 572091952}
   upgradeCost: {fileID: 1764481583}
   upgradeButton: {fileID: 204294333}
+  sellAmount: {fileID: 1347005553}
 --- !u!4 &2110392192
 Transform:
   m_ObjectHideFlags: 0
