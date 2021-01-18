@@ -112,10 +112,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 10
   speed: 10
+  startHealth: 100
   health: 100
   value: 50
   deathEffect: {fileID: 1963329028782052081, guid: 759b1da22b5af6940829cb82ea913f44, type: 3}
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 3338470410176997654}
 --- !u!114 &156219738652992213
 MonoBehaviour:
   m_ObjectHideFlags: 0
