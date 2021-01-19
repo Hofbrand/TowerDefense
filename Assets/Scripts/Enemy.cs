@@ -14,7 +14,6 @@ public class Enemy : MonoBehaviour
 
     public float startHealth = 100;
 
-
     public int value = 50;
 
     public GameObject deathEffect;
