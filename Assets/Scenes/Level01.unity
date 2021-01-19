@@ -985,7 +985,7 @@ MonoBehaviour:
     count: 10
     rate: 3
   spawnPoint: {fileID: 778633363}
-  timeBetweenWaves: 1
+  timeBetweenWaves: 0
   waveCountdownText: {fileID: 143711342}
   gameManager: {fileID: 80233391}
 --- !u!114 &80233389
