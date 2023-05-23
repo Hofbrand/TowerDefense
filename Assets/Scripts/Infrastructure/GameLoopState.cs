@@ -1,4 +1,6 @@
-﻿namespace Assets.Scripts.Infrastructure
+﻿using Assets.Scripts.Infrastructure.States;
+
+namespace Assets.Scripts.Infrastructure
 {
     public class GameLoopState : IState
     {
