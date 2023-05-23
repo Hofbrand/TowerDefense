@@ -14,7 +14,7 @@ namespace Assets.Scripts.Infrastructure
             _coroutineRunner = coroutineRunner;
         }
 
-        public void Load(string name, Action OnLoaded) => _coroutineRunner.StartCoroutine(LoadScene(name, OnLoaded));
+        public void Load(string name, Action OnLoaded = null) => _coroutineRunner.StartCoroutine(LoadScene(name, OnLoaded));
 
         private IEnumerator LoadScene(string nextScene, Action OnLoaded = null)
         {

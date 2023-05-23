@@ -23,6 +23,7 @@ namespace Assets.Scripts.Infrastructure
 
         private void EnterLoadLevel()
         {
+            _stateMachine.Enter<LoadLevelState>();
         }
 
         private void RegisterServices()
