@@ -1,6 +1,6 @@
 ﻿namespace Assets.Scripts.Infrastructure
 {
-    public class LoadLevelState : IState
+    public class LoadLevelState : IPayloadedState<string>
     {
         private GameStateMachine _gameStateMachine;
         private SceneLoader _sceneLoader;
@@ -11,9 +11,9 @@
             _sceneLoader = sceneLoader;
         }
 
-        public void Enter()
+        public void Enter(string name)
         {
-            _sceneLoader.Load("MainMenu");
+            _sceneLoader.Load(name);
         }
 
         public void Exit()
