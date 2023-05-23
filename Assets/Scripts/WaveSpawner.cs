@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,29 +21,29 @@ public class WaveSpawner : MonoBehaviour
 
     private void Update()
     {
-        if (EnemiesAlive > 0)
-        {
-            waveCountdownText.text = string.Format("{0:00.00}", 0f);
-            return;
-        }
+    //    if (EnemiesAlive > 0)
+    //    {
+    //        waveCountdownText.text = string.Format("{0:00.00}", 0f);
+    //        return;
+    //    }
 
-        if (waveNumber == waves.Length)
-        {
-            gameManager.WinLevel();
-            this.enabled = false;
-        }
+    //    if (waveNumber == waves.Length)
+    //    {
+    //        gameManager.WinLevel();
+    //        this.enabled = false;
+    //    }
 
-        if (countdown <= 0f)
-        {
-            StartCoroutine(SpawnWave());
-            countdown = timeBetweenWaves;
-        }
+    //    if (countdown <= 0f)
+    //    {
+              StartCoroutine(SpawnWave());
+    //        countdown = timeBetweenWaves;
+    //    }
 
-        countdown -= Time.deltaTime;
+    //    countdown -= Time.deltaTime;
 
-        countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
+    //    countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
 
-        waveCountdownText.text = string.Format("{0:00.00}", countdown);
+    //    waveCountdownText.text = string.Format("{0:00.00}", countdown);
     }
 
     IEnumerator SpawnWave()

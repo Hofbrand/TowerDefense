@@ -23,7 +23,7 @@ namespace Assets.Scripts.Infrastructure
 
         private void EnterLoadLevel()
         {
-            _stateMachine.Enter<LoadLevelState, string>("MainMenu");
+            _stateMachine.Enter<LoadLevelState, string>("Level01");
         }
 
         private void RegisterServices()

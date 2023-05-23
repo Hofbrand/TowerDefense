@@ -9,12 +9,13 @@ namespace Assets.Scripts.Infrastructure
         private readonly Dictionary <Type,IExitableState> _states;
         private IExitableState _activeState;
 
-        public GameStateMachine(SceneLoader sceneLoader)
+        public GameStateMachine(SceneLoader sceneLoader, SceneFader fader)
         {
             _states = new Dictionary<Type, IExitableState>()
             {
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader),
-                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader)
+                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, fader),
+                [typeof(GameLoopState)] = new GameLoopState(this)
             };
         }
 

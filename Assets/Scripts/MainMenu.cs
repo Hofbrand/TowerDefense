@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        sceneFader.FadeTo(levelToLoad);
+        //sceneFader.FadeTo(levelToLoad);
     }
 
     public void Quit()

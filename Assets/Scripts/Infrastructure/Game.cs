@@ -3,9 +3,9 @@
     public class Game 
     {
         public GameStateMachine StateMachine;
-        public Game(ICoroutineRunner coroutineRunner)
+        public Game(ICoroutineRunner coroutineRunner, SceneFader fader)
         {
-            StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner));
+            StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), fader);
         }
 
     }

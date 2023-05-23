@@ -1,49 +1,41 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class SceneFader : MonoBehaviour
 {
     public Image img;
     public AnimationCurve curve;
 
-    private void Start()
+    private float alpha;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
+
+    public void Show()
+    {
+        gameObject.SetActive(true);
+        alpha = 1f;
+    }
+
+    public void Hide()
     {
         StartCoroutine(FadeIn());
     }
 
-    public void FadeTo(string scene)
-    {
-        StartCoroutine(FadeOut(scene));
-    }
-
     IEnumerator FadeIn()
     {
-        float t = 1f;
 
-        while (t > 0f) 
+        while (alpha > 0f) 
         {
-            t -= Time.deltaTime;
-            float a = curve.Evaluate(t);
+            alpha -= 0.03f;
+            float a = curve.Evaluate(alpha);
             img.color = new Color(0f, 0f, 0f, a);
-            yield return 0;
-        }
-    }
-
-    IEnumerator FadeOut(string scene)
-    {
-        float t = 0f;
-
-        while (t < 1f)
-        {
-            t += Time.deltaTime;
-            float a = curve.Evaluate(t);
-            img.color = new Color(0f, 0f, 0f, a);
-            yield return 0;
+            yield return new WaitForSeconds(0.03f); 
         }
 
-        SceneManager.LoadScene(scene);
+        gameObject.SetActive(false);
     }
 }

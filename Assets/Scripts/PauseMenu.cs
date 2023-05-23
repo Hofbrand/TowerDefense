@@ -36,12 +36,12 @@ public class PauseMenu : MonoBehaviour
     public void Menu()
     {
         Toggle();
-        sceneFader.FadeTo(menuSceneName);
+       // sceneFader.FadeTo(menuSceneName);
     }
 
     public void Retry()
     {
         Toggle();
-        sceneFader.FadeTo(SceneManager.GetActiveScene().name);
+       // sceneFader.FadeTo(SceneManager.GetActiveScene().name);
     }
 }
