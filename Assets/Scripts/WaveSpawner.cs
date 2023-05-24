@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Infrastructure.Factory;
+using Assets.Scripts.Infrastructure.Services;
+using Assets.Scripts.Infrastructure.StaticData;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,32 +21,38 @@ public class WaveSpawner : MonoBehaviour
     public Text waveCountdownText;
 
     public GameManager gameManager;
+    private IGameFactory _factory;
+
+    private void Awake()
+    {
+        _factory = AllServices.Container.Single<IGameFactory>();
+    }
 
     private void Update()
     {
-    //    if (EnemiesAlive > 0)
-    //    {
-    //        waveCountdownText.text = string.Format("{0:00.00}", 0f);
-    //        return;
-    //    }
+        if (EnemiesAlive > 0)
+        {
+ //           waveCountdownText.text = string.Format("{0:00.00}", 0f);
+            return;
+        }
 
-    //    if (waveNumber == waves.Length)
-    //    {
-    //        gameManager.WinLevel();
-    //        this.enabled = false;
-    //    }
+        if (waveNumber == waves.Length)
+        {
+            gameManager.WinLevel();
+            this.enabled = false;
+        }
 
-    //    if (countdown <= 0f)
-    //    {
-    //          StartCoroutine(SpawnWave());
-    //        countdown = timeBetweenWaves;
-    //    }
+        if (countdown <= 0f)
+        {
+            StartCoroutine(SpawnWave());
+            countdown = timeBetweenWaves;
+        }
 
-    //    countdown -= Time.deltaTime;
+        countdown -= Time.deltaTime;
 
-    //    countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
+        countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
 
-    //    waveCountdownText.text = string.Format("{0:00.00}", countdown);
+//        waveCountdownText.text = string.Format("{0:00.00}", countdown);
     }
 
     IEnumerator SpawnWave()
@@ -56,7 +65,7 @@ public class WaveSpawner : MonoBehaviour
         
         for (int i = 0; i < wave.count; i++)
         {
-            SpawnEnemy(wave.enemy);
+            SpawnEnemy();//waveEnemy as param
             yield return new WaitForSeconds(1f/wave.rate);
         }
 
@@ -64,8 +73,9 @@ public class WaveSpawner : MonoBehaviour
 
     }
 
-    void SpawnEnemy(GameObject enemy)
+    private void SpawnEnemy()
     {
-        Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
+        var enemyType = EnemyType.Simple; // todo
+        _factory.CreateEnemy(enemyType, spawnPoint);
     }
 }

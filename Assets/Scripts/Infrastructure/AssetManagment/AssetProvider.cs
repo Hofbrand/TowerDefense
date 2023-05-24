@@ -9,5 +9,11 @@ namespace Assets.Scripts.Infrastructure.AssetManagment
             var prefab = Resources.Load<GameObject>(path);
             Object.Instantiate(prefab);
         }
+
+        public void Instantiate(string path, Transform at)
+        {
+            var prefab = Resources.Load<GameObject>(path);
+            Object.Instantiate(prefab, at.position, Quaternion.identity);
+        }
     }
 }

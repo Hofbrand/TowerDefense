@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Infrastructure.AssetManagment;
 using Assets.Scripts.Infrastructure.Factory;
 using Assets.Scripts.Infrastructure.Services;
+using Assets.Scripts.Infrastructure.StaticData;
 
 namespace Assets.Scripts.Infrastructure.States
 {
@@ -32,8 +33,17 @@ namespace Assets.Scripts.Infrastructure.States
 
         private void RegisterServices()
         {
+            RegisterStaticData();
+
             _services.RegisterSingle<IAssetProvider>(new AssetProvider());
-            _services.RegisterSingle<IGameFactory>(new GameFactory(_services.Single<IAssetProvider>()));
+            _services.RegisterSingle<IGameFactory>(new GameFactory(_services.Single<IAssetProvider>(),_services.Single<IStaticDataService>()));
+        }
+
+        private void RegisterStaticData()
+        {
+            IStaticDataService staticData = new StaticDataService();
+            staticData.LoadMonsters();
+            _services.RegisterSingle<IStaticDataService>(staticData);
         }
 
         public void Exit()
