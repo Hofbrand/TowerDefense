@@ -75,7 +75,7 @@ public class WaveSpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        var enemyType = EnemyType.Simple; // todo
+        var enemyType = EnemyType.Fast; // todo
         _factory.CreateEnemy(enemyType, spawnPoint);
     }
 }
