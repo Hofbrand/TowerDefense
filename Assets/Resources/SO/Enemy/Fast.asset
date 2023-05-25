@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cdca199ffa046149a6ed3f74907fe83, type: 3}
   m_Name: Fast
   m_EditorClassIdentifier: 
-  Type: 0
-  StartHealth: 0
-  StartSpeed: 0
-  Value: 0
-  Prefab: {fileID: 0}
-  DeathEffect: {fileID: 0}
+  Type: 1
+  StartHealth: 30
+  StartSpeed: 30
+  Value: 5
+  Prefab: {fileID: 404408136365595534, guid: c011513f596063b48915225f2002d572, type: 3}
+  DeathEffect: {fileID: 1963329028782052081, guid: 0c90af91f08cec9408e4136366d4ee6b, type: 3}

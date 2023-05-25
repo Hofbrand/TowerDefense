@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Infrastructure.StaticData;
 
 [System.Serializable]
 public class Wave {
 
-    public GameObject enemy;
+    public EnemyType enemy;
     public int count;
     public float rate;
 }

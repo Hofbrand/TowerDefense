@@ -1,5 +1,4 @@
 ﻿using Assets.Scripts.Infrastructure.States;
-using TMPro.EditorUtilities;
 using UnityEngine;
 
 namespace Assets.Scripts.Infrastructure

@@ -2,6 +2,7 @@
 using Assets.Scripts.Infrastructure.Services;
 using Assets.Scripts.Infrastructure.StaticData;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +11,7 @@ public class WaveSpawner : MonoBehaviour
 
     public static int EnemiesAlive = 0;
 
-    public Wave[] waves;
+    public List<Wave> Waves;
     public Transform spawnPoint;
 
     public float timeBetweenWaves = 1f;
@@ -36,7 +37,7 @@ public class WaveSpawner : MonoBehaviour
             return;
         }
 
-        if (waveNumber == waves.Length)
+        if (waveNumber == Waves.Count)
         {
             gameManager.WinLevel();
             this.enabled = false;
@@ -59,13 +60,13 @@ public class WaveSpawner : MonoBehaviour
     {
         PlayerStats.Rounds++;
 
-        Wave wave = waves[waveNumber];
+        Wave wave = Waves[waveNumber];
 
         EnemiesAlive = wave.count;
         
         for (int i = 0; i < wave.count; i++)
         {
-            SpawnEnemy();//waveEnemy as param
+            SpawnEnemy(wave.enemy);//waveEnemy as param
             yield return new WaitForSeconds(1f/wave.rate);
         }
 
@@ -73,9 +74,8 @@ public class WaveSpawner : MonoBehaviour
 
     }
 
-    private void SpawnEnemy()
+    private void SpawnEnemy(EnemyType enemyType)
     {
-        var enemyType = EnemyType.Fast; // todo
         _factory.CreateEnemy(enemyType, spawnPoint);
     }
 }

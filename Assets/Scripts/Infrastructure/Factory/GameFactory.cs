@@ -28,6 +28,14 @@ namespace Assets.Scripts.Infrastructure.Factory
             _assetProvider.Instantiate(AssetPath.HudPath);
         }
 
+        public void InitWaveSpawner(LevelStaticData levelStaticData)
+        {
+            WaveSpawner waveSpawner = GameObject.FindWithTag("WaveSpawner").GetComponent<WaveSpawner>();
+       
+            waveSpawner.Waves = levelStaticData.Waves;
+            waveSpawner.enabled = true;
+        }
+
         private void InitEnemy(EnemyStaticData data, Enemy enemyMB)
         {
             enemyMB.health = data.StartHealth;

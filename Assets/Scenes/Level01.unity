@@ -949,7 +949,7 @@ GameObject:
   - component: {fileID: 80233392}
   m_Layer: 0
   m_Name: GameMaster
-  m_TagString: Untagged
+  m_TagString: WaveSpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -976,27 +976,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80233386}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66a5d279e54541243975f25e869fddf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waves:
-  - enemy: {fileID: 404408136365595534, guid: a61129234286a7a45a4258387b5b4497, type: 3}
-    count: 1
-    rate: 2
-  - enemy: {fileID: 404408136365595534, guid: a61129234286a7a45a4258387b5b4497, type: 3}
-    count: 2
-    rate: 2
-  - enemy: {fileID: 404408136365595534, guid: a61129234286a7a45a4258387b5b4497, type: 3}
-    count: 5
-    rate: 2
-  - enemy: {fileID: 404408136365595534, guid: 1ba79a3f941230f4f96cebbd9abab301, type: 3}
-    count: 3
-    rate: 1
-  - enemy: {fileID: 404408136365595534, guid: c011513f596063b48915225f2002d572, type: 3}
-    count: 10
-    rate: 3
+  Waves: []
   spawnPoint: {fileID: 778633363}
   timeBetweenWaves: 0
   waveCountdownText: {fileID: 0}
@@ -4243,7 +4228,6 @@ MonoBehaviour:
   menuSceneName: MainMenu
   nextLevel: Level02
   levelToUnlock: 2
-  sceneFader: {fileID: 0}
 --- !u!4 &436709346 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7345334208228314504, guid: 723bbb828e4661841a446297d6db2aed, type: 3}
