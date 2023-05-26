@@ -1,30 +1,36 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Infrastructure.Factory;
+using Assets.Scripts.Infrastructure.Services;
+using System;
+using UnityEngine;
+using UnityEngine.AI;
 
 [RequireComponent(typeof(Enemy))]
 public class EnemyMovement : MonoBehaviour
 {
+    public NavMeshAgent Agent;
+
+    private const float MinDistance = 1f;
+
     private Transform target;
     private int wavepointIndex = 0;
+    private IGameFactory _gameFactory;
 
     private Enemy enemy;
 
     void Start()
     {
+        _gameFactory = AllServices.Container.Single<IGameFactory>();
+        target = _gameFactory.TargetTransform;
+        Debug.LogError(target.gameObject.name);
+        Debug.LogError(target.position);
         enemy = GetComponent<Enemy>();
-        target = Waypoints.waypoints[0];
+
+        Agent.destination = target.position;
     }
 
-    private void Update()
+    private bool TargetNotReached()
     {
-        Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * enemy.speed * Time.deltaTime, Space.World);
-
-        if (Vector3.Distance(transform.position, target.position) <= 0.2f)
-        {
-            GetNextWaypoint();
-        }
-
-        enemy.speed = enemy.startSpeed;
+        return Vector3.Distance(Agent.transform.position, target.position) >= MinDistance;
     }
 
     void GetNextWaypoint()

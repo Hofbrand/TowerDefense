@@ -6,6 +6,8 @@ namespace Assets.Scripts.Infrastructure.Factory
 {
     public interface IGameFactory : IService
     {
+        Transform TargetTransform { get; }
+
         void CreateHUD();
         void CreateEnemy(EnemyType type,Transform at);
         void InitWaveSpawner(LevelStaticData levelStaticData);

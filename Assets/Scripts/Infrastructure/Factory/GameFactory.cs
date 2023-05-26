@@ -6,8 +6,12 @@ namespace Assets.Scripts.Infrastructure.Factory
 {
     public class GameFactory : IGameFactory
     {
+        private const string WaveTag = "WaveSpawner";
+        private const string Target = "Target";
+
         private readonly IAssetProvider _assetProvider;
         private readonly IStaticDataService _staticData;
+        public Transform TargetTransform { get; private set; }
 
         public GameFactory(IAssetProvider assetProvider, IStaticDataService staticData)
         {
@@ -21,6 +25,7 @@ namespace Assets.Scripts.Infrastructure.Factory
 
             GameObject enemy = Object.Instantiate(data.Prefab, at.position, Quaternion.identity);
             var enemyMB = enemy.GetComponent<Enemy>();
+            InitTarget();
             InitEnemy(data, enemyMB);
         }
         public void CreateHUD()
@@ -28,12 +33,18 @@ namespace Assets.Scripts.Infrastructure.Factory
             _assetProvider.Instantiate(AssetPath.HudPath);
         }
 
+
         public void InitWaveSpawner(LevelStaticData levelStaticData)
         {
-            WaveSpawner waveSpawner = GameObject.FindWithTag("WaveSpawner").GetComponent<WaveSpawner>();
+            WaveSpawner waveSpawner = GameObject.FindWithTag(WaveTag).GetComponent<WaveSpawner>();
        
             waveSpawner.Waves = levelStaticData.Waves;
             waveSpawner.enabled = true;
+        }
+
+        private void InitTarget()
+        {
+            TargetTransform = GameObject.FindWithTag(Target).transform;
         }
 
         private void InitEnemy(EnemyStaticData data, Enemy enemyMB)
