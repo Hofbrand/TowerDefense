@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cdca199ffa046149a6ed3f74907fe83, type: 3}
+  m_Name: Tough
+  m_EditorClassIdentifier: 
+  Type: 2
+  StartHealth: 100
+  StartSpeed: 10
+  Value: 15
+  Prefab: {fileID: 404408136365595534, guid: 1ba79a3f941230f4f96cebbd9abab301, type: 3}
+  DeathEffect: {fileID: 1963329028782052081, guid: 0c90af91f08cec9408e4136366d4ee6b, type: 3}

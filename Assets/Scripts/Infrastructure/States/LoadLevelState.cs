@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Infrastructure.Factory;
 using Assets.Scripts.Infrastructure.StaticData;
 using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts.Infrastructure.States
@@ -30,16 +31,24 @@ namespace Assets.Scripts.Infrastructure.States
 
         private void OnLoaded()
         {
-            _factory.CreateHUD();
-            InitWaves();
+            InitGameWorld();
             _gameStateMachine.Enter<GameLoopState>();
         }
 
-        private void InitWaves()
+        private void InitGameWorld()
+        {
+            _factory.CreateHUD();
+            InitSpawners();
+        }
+
+        private void InitSpawners()
         {
             string sceneKey = SceneManager.GetActiveScene().name;
             LevelStaticData levelStaticData = _staticData.ForLevel(sceneKey);
+            foreach(var spawner in GameObject.FindGameObjectsWithTag("WaveSpawner"))
+            {
 
+            }
             _factory.InitWaveSpawner(levelStaticData);
         }
 
