@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - WaveSpawner
   - Target
+  - FPS
   layers:
   - Default
   - TransparentFX

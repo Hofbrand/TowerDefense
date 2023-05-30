@@ -1,7 +1,10 @@
 ﻿using Assets.Scripts.Infrastructure.AssetManagment;
 using Assets.Scripts.Infrastructure.Factory;
 using Assets.Scripts.Infrastructure.Services;
+using Assets.Scripts.Infrastructure.Services.Input;
 using Assets.Scripts.Infrastructure.StaticData;
+using System.Xml.Serialization;
+using UnityEngine;
 
 namespace Assets.Scripts.Infrastructure.States
 {
@@ -34,6 +37,7 @@ namespace Assets.Scripts.Infrastructure.States
         private void RegisterServices()
         {
             RegisterStaticData();
+            RegisterInputService();
 
             _services.RegisterSingle<IGameStateMachine>(_stateMachine);
             _services.RegisterSingle<IAssetProvider>(new AssetProvider());
@@ -47,6 +51,19 @@ namespace Assets.Scripts.Infrastructure.States
             staticData.LoadLevels();
 
             _services.RegisterSingle<IStaticDataService>(staticData);
+        }
+
+        private void RegisterInputService() 
+        {
+            if (Application.isEditor)
+            {
+                _services.RegisterSingle<IInputService>(new StandaloneInputService());
+            }
+            else
+            {
+                _services.RegisterSingle<IInputService>(new MobileInputService());
+            }
+
         }
 
         public void Exit()

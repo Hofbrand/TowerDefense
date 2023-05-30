@@ -33,7 +33,7 @@ public class WaveSpawner : MonoBehaviour
     {
         if (EnemiesAlive > 0)
         {
- //           waveCountdownText.text = string.Format("{0:00.00}", 0f);
+            //           waveCountdownText.text = string.Format("{0:00.00}", 0f);
             return;
         }
 
@@ -43,31 +43,35 @@ public class WaveSpawner : MonoBehaviour
             this.enabled = false;
         }
 
-        if (countdown <= 0f)
-        {
-            StartCoroutine(SpawnWave());
-            countdown = timeBetweenWaves;
-        }
+       StartCoroutine(SpawnWaves());
+       countdown = timeBetweenWaves;
 
         countdown -= Time.deltaTime;
 
-        countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
+       // countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
 
 //        waveCountdownText.text = string.Format("{0:00.00}", countdown);
     }
+   
+    IEnumerator SpawnWaves()
+    {
+        foreach (var wave in Waves) 
+        {
+            yield return SpawnWave(wave);
+            yield return new WaitForSeconds(timeBetweenWaves);
+        }
+    }
 
-    IEnumerator SpawnWave()
+    IEnumerator SpawnWave(Wave wave)
     {
         PlayerStats.Rounds++;
-
-        Wave wave = Waves[waveNumber];
 
         EnemiesAlive = wave.count;
         
         for (int i = 0; i < wave.count; i++)
         {
-            SpawnEnemy(wave.enemy);//waveEnemy as param
             yield return new WaitForSeconds(1f/wave.rate);
+            SpawnEnemy(wave.enemy);//waveEnemy as param
         }
 
         waveNumber++;

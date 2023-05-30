@@ -11,5 +11,7 @@ namespace Assets.Scripts.Infrastructure.Factory
         void CreateHUD();
         void CreateEnemy(EnemyType type,Transform at);
         void InitWaveSpawner(LevelStaticData levelStaticData);
+        void EnableSpawner();
+        void EnableFPSCamera();
     }
 }

@@ -11,6 +11,7 @@ namespace Assets.Scripts.Infrastructure.Factory
 
         private readonly IAssetProvider _assetProvider;
         private readonly IStaticDataService _staticData;
+       
         public Transform TargetTransform { get; private set; }
 
         public GameFactory(IAssetProvider assetProvider, IStaticDataService staticData)
@@ -28,17 +29,23 @@ namespace Assets.Scripts.Infrastructure.Factory
             InitTarget();
             InitEnemy(data, enemyMB);
         }
+
         public void CreateHUD()
         {
             _assetProvider.Instantiate(AssetPath.HudPath);
         }
-
 
         public void InitWaveSpawner(LevelStaticData levelStaticData)
         {
             WaveSpawner waveSpawner = GameObject.FindWithTag(WaveTag).GetComponent<WaveSpawner>();
        
             waveSpawner.Waves = levelStaticData.Waves;
+        }
+
+        public void EnableSpawner()
+        {
+            WaveSpawner waveSpawner = GameObject.FindWithTag(WaveTag).GetComponent<WaveSpawner>();
+
             waveSpawner.enabled = true;
         }
 
@@ -53,6 +60,14 @@ namespace Assets.Scripts.Infrastructure.Factory
             enemyMB.value = data.Value;
             enemyMB.deathEffect = data.DeathEffect;
             enemyMB.startSpeed = data.StartSpeed;   
+        }
+
+        public void EnableFPSCamera()
+        {
+            Camera currentCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+            currentCamera.enabled = false;
+            Camera fps = GameObject.FindWithTag("FPS").GetComponent<Camera>();
+            fps.enabled = true;
         }
     }
 }

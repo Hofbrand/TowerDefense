@@ -32,7 +32,7 @@ namespace Assets.Scripts.Infrastructure.States
         private void OnLoaded()
         {
             InitGameWorld();
-            _gameStateMachine.Enter<GameLoopState>();
+            _gameStateMachine.Enter<BuildPhaseState>();
         }
 
         private void InitGameWorld()
@@ -45,10 +45,6 @@ namespace Assets.Scripts.Infrastructure.States
         {
             string sceneKey = SceneManager.GetActiveScene().name;
             LevelStaticData levelStaticData = _staticData.ForLevel(sceneKey);
-            foreach(var spawner in GameObject.FindGameObjectsWithTag("WaveSpawner"))
-            {
-
-            }
             _factory.InitWaveSpawner(levelStaticData);
         }
 

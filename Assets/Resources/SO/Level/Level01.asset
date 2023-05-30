@@ -16,4 +16,7 @@ MonoBehaviour:
   Waves:
   - enemy: 2
     count: 3
-    rate: 5
+    rate: 1
+  - enemy: 1
+    count: 3
+    rate: 1
