@@ -2,6 +2,7 @@
 using Assets.Scripts.Infrastructure.States;
 using System;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Assets.Scripts.Infrastructure
 {
@@ -9,7 +10,7 @@ namespace Assets.Scripts.Infrastructure
     {
         private GameStateMachine _gameStateMachine;
         private readonly IGameFactory _gameFactory;
-        private double seconds = 3;
+        private double seconds = 15;
 
         public BuildPhaseState(GameStateMachine gameStateMachine, IGameFactory gameFactory)
         {
@@ -27,6 +28,8 @@ namespace Assets.Scripts.Infrastructure
         public void Exit()
         {
            _gameFactory.EnableSpawner();
+            GameObject.FindGameObjectWithTag("Build").GetComponent<BuildManager>().TurnOff();
+            //turn off hud 
            // _gameFactory.EnableFPSCamera();
         }
     }
