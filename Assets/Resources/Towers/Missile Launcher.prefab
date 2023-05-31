@@ -23,12 +23,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1215165338446795695}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.14, y: 0.09, z: 1.33}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0.036, y: 1.54, z: 0.13999987}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8872615747240498726}
+  m_Father: {fileID: 2343257960816673484}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2042163303396578644
@@ -60,9 +60,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2343257960816673480}
-  - {fileID: 1565236914434982080}
   m_Father: {fileID: 2343257960816673484}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &2343257960816451304
 GameObject:
@@ -262,6 +261,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2343257960816673482}
+  - {fileID: 1565236914434982080}
   - {fileID: 8872615747240498726}
   - {fileID: 5051022192860662714}
   m_Father: {fileID: 0}
@@ -280,14 +280,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 30
-  bulletPrefab: {fileID: 9025524805189612810, guid: 1b6ddb4c900f9564782666b9496b683d, type: 3}
+  bulletPrefab: {fileID: 1860225630229698, guid: 157e913edac1e4447b69698fd1d6019c, type: 3}
   fireRate: 0.25
-  damageOverTime: 30
-  useLaser: 0
-  slowPct: 0.5
-  lineRenderer: {fileID: 0}
-  impactEffect: {fileID: 0}
-  impactLight: {fileID: 0}
   enemyTag: Enemy
   partToRotate: {fileID: 5051022192860662714}
   turnSpeed: 10
@@ -305,7 +299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4726845435154544, guid: 7a67199c460763c43a005506acc1dde2, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4726845435154544, guid: 7a67199c460763c43a005506acc1dde2, type: 3}
       propertyPath: m_LocalScale.x

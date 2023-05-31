@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1042168815
 Transform:
   m_ObjectHideFlags: 0
@@ -23,13 +23,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1042168814}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 0.485, z: 1.096}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 2.17, z: 2.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7049001643785082926}
-  m_RootOrder: 1
+  m_Father: {fileID: 7171718354929576218}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7171718354929874232
 GameObject:
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 7171718354929576218}
   - component: {fileID: 2536694028508582240}
   m_Layer: 0
-  m_Name: Laser BeamerUpgraded
+  m_Name: Sniper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,12 +140,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7171718354929874234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 505092794958329692}
+  - {fileID: 2154810175354490191}
   - {fileID: 7171718354929576216}
+  - {fileID: 1042168815}
   - {fileID: 7049001643785082926}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -162,17 +163,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9b96f4e821d57e45bc7242d04020378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 30
-  bulletPrefab: {fileID: 444513942650275744, guid: e5997b73b2963674d82f3b7032d1b85c, type: 3}
+  range: 20
+  bulletPrefab: {fileID: 1663812895145426, guid: 9a27b28aaddfd7e4c84339511e0d10e2, type: 3}
   fireRate: 1
-  damageOverTime: 40
-  useLaser: 1
-  slowPct: 0.8
-  lineRenderer: {fileID: 0}
-  impactEffect: {fileID: 0}
-  impactLight: {fileID: 0}
   enemyTag: Enemy
-  partToRotate: {fileID: 7049001643785082926}
+  partToRotate: {fileID: 2154810175354490191}
   turnSpeed: 10
   firePoint: {fileID: 1042168815}
 --- !u!1 &7171718354929874238
@@ -192,7 +187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7171718354929576222
 Transform:
   m_ObjectHideFlags: 0
@@ -237,8 +232,8 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: fcd47e85925d305458b43fc25d7c07e7, type: 2}
-  - {fileID: 2100000, guid: 0fb095ea77ca4734aa0dbb32784e33c0, type: 2}
   - {fileID: 2100000, guid: 333382cf2aa0f6e408c0ac9be4090799, type: 2}
+  - {fileID: 2100000, guid: 0fb095ea77ca4734aa0dbb32784e33c0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -289,11 +284,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7171718354929576222}
-  - {fileID: 1042168815}
   m_Father: {fileID: 7171718354929576218}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!1001 &509805914948321818
+--- !u!1001 &2158964266485168137
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -362,8 +356,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3da9fd16f2d6c67468ca9222d4abf72f, type: 3}
---- !u!4 &505092794958329692 stripped
+--- !u!4 &2154810175354490191 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4858741329163590, guid: 3da9fd16f2d6c67468ca9222d4abf72f, type: 3}
-  m_PrefabInstance: {fileID: 509805914948321818}
+  m_PrefabInstance: {fileID: 2158964266485168137}
   m_PrefabAsset: {fileID: 0}
