@@ -19,15 +19,15 @@ namespace Assets.Scripts.Infrastructure
 
         public async void Enter()
         {
-      //      await Task.Delay(TimeSpan.FromSeconds(seconds));
-           
-       //     _gameStateMachine.Enter<ActionPhaseState>();
+            await Task.Delay(TimeSpan.FromSeconds(seconds));
+
+            _gameStateMachine.Enter<ActionPhaseState>();
         }
 
         public void Exit()
         {
-            _gameFactory.EnableSpawner();
-            _gameFactory.EnableFPSCamera();
+           _gameFactory.EnableSpawner();
+           // _gameFactory.EnableFPSCamera();
         }
     }
 }

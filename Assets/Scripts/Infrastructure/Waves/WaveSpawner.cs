@@ -39,8 +39,8 @@ public class WaveSpawner : MonoBehaviour
 
         if (waveNumber == Waves.Count)
         {
-            gameManager.WinLevel();
-            this.enabled = false;
+        //    gameManager.WinLevel();
+        //    this.enabled = false;
         }
 
        StartCoroutine(SpawnWaves());

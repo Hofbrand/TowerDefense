@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts.Infrastructure.CameraLogic
 {
@@ -9,19 +8,19 @@ namespace Assets.Scripts.Infrastructure.CameraLogic
         public float Distance;
         public float Offset;
 
-        [SerializeField]
         private Transform _following;
 
         private void LateUpdate()
         {
-            if(_following == null ) { return; }
+            if (_following == null) { return; }
 
-            Quaternion rotation = Quaternion.Euler(RotationAngleX,0,0);
+            Vector3 followingPointPosition = FollowingPointPosition();
 
-            Vector3 position = rotation * new Vector3(0, 0, Distance) + FollowingPointPosition();
+            Quaternion rotation = Quaternion.Euler(RotationAngleX, 0, 0);
+            Vector3 offset = rotation * new Vector3(0, 0, -Distance);
 
-            transform.rotation = rotation;
-            transform.position = position;
+            transform.position = followingPointPosition + offset;
+            transform.rotation = Quaternion.LookRotation(followingPointPosition, Vector3.up);
         }
 
         public void Follow(GameObject following)
