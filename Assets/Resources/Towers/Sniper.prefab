@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1042168814}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 2.17, z: 2.54}
+  m_LocalPosition: {x: 0.01, y: 1.08, z: 2.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -163,9 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9b96f4e821d57e45bc7242d04020378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 20
+  range: 50
   bulletPrefab: {fileID: 1663812895145426, guid: 9a27b28aaddfd7e4c84339511e0d10e2, type: 3}
-  fireRate: 1
+  fireRate: 0.2
   enemyTag: Enemy
   partToRotate: {fileID: 2154810175354490191}
   turnSpeed: 10
@@ -304,15 +304,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4858741329163590, guid: 3da9fd16f2d6c67468ca9222d4abf72f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4858741329163590, guid: 3da9fd16f2d6c67468ca9222d4abf72f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4858741329163590, guid: 3da9fd16f2d6c67468ca9222d4abf72f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4858741329163590, guid: 3da9fd16f2d6c67468ca9222d4abf72f, type: 3}
       propertyPath: m_LocalPosition.x
