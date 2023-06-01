@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Infrastructure.AssetManagment;
+using Assets.Scripts.Infrastructure.EnemyLogic;
 using Assets.Scripts.Infrastructure.StaticData;
 using UnityEngine;
 

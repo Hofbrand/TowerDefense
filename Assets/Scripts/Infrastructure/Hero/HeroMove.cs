@@ -29,12 +29,11 @@ public class HeroMove : MonoBehaviour
 
         if (_inputService.Axis.sqrMagnitude > 0.01f)
         {
-            Debug.LogError(_inputService.Axis);
             movementVector = _inputService.Axis;
             movementVector.y = 0;
             movementVector.Normalize();
 
-            transform.forward = movementVector;
+            //transform.forward = movementVector;
         }
 
        // movementVector += Physics.gravity;

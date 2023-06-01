@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Infrastructure.EnemyLogic;
+using UnityEngine;
 
 public class Turret : MonoBehaviour
 {

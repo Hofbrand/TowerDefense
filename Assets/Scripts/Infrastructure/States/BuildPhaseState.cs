@@ -30,7 +30,20 @@ namespace Assets.Scripts.Infrastructure
            _gameFactory.EnableSpawner();
             GameObject.FindGameObjectWithTag("Build").GetComponent<BuildManager>().TurnOff();
             //turn off hud 
-           // _gameFactory.EnableFPSCamera();
+            DisableShop();
+            EnableActiobHud();
+           _gameFactory.EnableFPSCamera();
         }
+
+        private void DisableShop()
+        {
+            GameObject.FindGameObjectWithTag("Shop").gameObject.SetActive(false);
+        }
+
+        private void EnableActiobHud()
+        {
+            GameObject.FindGameObjectWithTag("Action").GetComponent<Canvas>().enabled = true;
+        }
+    
     }
 }

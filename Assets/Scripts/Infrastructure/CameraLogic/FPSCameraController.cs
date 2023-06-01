@@ -20,7 +20,7 @@ namespace Assets.Scripts.Infrastructure.CameraLogic
             Vector3 offset = rotation * new Vector3(0, 0, -Distance);
 
             transform.position = followingPointPosition + offset;
-            transform.rotation = Quaternion.LookRotation(followingPointPosition, Vector3.up);
+            transform.rotation = Quaternion.LookRotation(transform.forward, Vector3.up);
         }
 
         public void Follow(GameObject following)

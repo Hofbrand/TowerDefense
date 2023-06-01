@@ -9,6 +9,8 @@ TagManager:
   - Target
   - FPS
   - Build
+  - Shop
+  - Action
   layers:
   - Default
   - TransparentFX

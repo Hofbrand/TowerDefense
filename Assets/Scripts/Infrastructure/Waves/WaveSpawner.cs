@@ -8,14 +8,13 @@ using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
-
     public static int EnemiesAlive = 0;
 
     public List<Wave> Waves;
     public Transform spawnPoint;
 
     public float timeBetweenWaves = 1f;
-    private float countdown = 2f;
+    public float timeBetweenEnemies = 0.5f; // Delay between spawning each enemy in a wave
 
     private int waveNumber = 0;
 
@@ -29,53 +28,40 @@ public class WaveSpawner : MonoBehaviour
         _factory = AllServices.Container.Single<IGameFactory>();
     }
 
+    private void Start()
+    {
+        StartCoroutine(SpawnWaves());
+    }
+
     private void Update()
     {
-        if (EnemiesAlive > 0)
-        {
-            //           waveCountdownText.text = string.Format("{0:00.00}", 0f);
-            return;
-        }
-
-        if (waveNumber == Waves.Count)
-        {
-        //    gameManager.WinLevel();
-        //    this.enabled = false;
-        }
-
-       StartCoroutine(SpawnWaves());
-       countdown = timeBetweenWaves;
-
-        countdown -= Time.deltaTime;
-
-       // countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
-
-//        waveCountdownText.text = string.Format("{0:00.00}", countdown);
+        // You can keep any additional logic here, such as updating UI or checking for win conditions
     }
-   
+
     IEnumerator SpawnWaves()
     {
-        foreach (var wave in Waves) 
+        while (waveNumber < Waves.Count)
         {
+            Wave wave = Waves[waveNumber];
             yield return SpawnWave(wave);
-            yield return new WaitForSeconds(timeBetweenWaves);
+
+            waveNumber++;
+
+            if (waveNumber < Waves.Count)
+                yield return new WaitForSeconds(timeBetweenWaves);
         }
     }
 
     IEnumerator SpawnWave(Wave wave)
     {
         PlayerStats.Rounds++;
-
         EnemiesAlive = wave.count;
-        
+
         for (int i = 0; i < wave.count; i++)
         {
-            yield return new WaitForSeconds(1f/wave.rate);
-            SpawnEnemy(wave.enemy);//waveEnemy as param
+            SpawnEnemy(wave.enemy);
+            yield return new WaitForSeconds(timeBetweenEnemies);
         }
-
-        waveNumber++;
-
     }
 
     private void SpawnEnemy(EnemyType enemyType)
