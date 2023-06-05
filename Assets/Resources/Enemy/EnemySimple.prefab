@@ -751,9 +751,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animator: {fileID: 9050591981724093906}
-  AttackCooldown: 3
+  AttackCooldown: 1
   Cleavage: 0.5
   EffectiveDistance: 1
+  Damag: 10
 --- !u!114 &5639430340551807306
 MonoBehaviour:
   m_ObjectHideFlags: 0

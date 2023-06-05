@@ -1,6 +1,7 @@
 using Assets.Scripts.Infrastructure.EnemyLogic;
 using Assets.Scripts.Infrastructure.Factory;
 using Assets.Scripts.Infrastructure.Services;
+using Assets.Scripts.Turrt;
 using System.Linq;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ public class Attack : MonoBehaviour
     public float AttackCooldown = 3f;
     public float Cleavage = 0.5f;
     public float EffectiveDistance = 1f;
+    public int Damag = 10;
 
     private IGameFactory _gameFactory;
     private Transform _target;
@@ -60,6 +62,7 @@ public class Attack : MonoBehaviour
         if (Hit(out Collider hit))
         {
             Debug.Log(hit.name);
+            hit.transform.GetComponent<HP>().TakeDamage(Damag);
         }
     }
 
