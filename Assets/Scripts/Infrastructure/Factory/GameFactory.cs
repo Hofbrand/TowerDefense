@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Infrastructure.AssetManagment;
 using Assets.Scripts.Infrastructure.EnemyLogic;
 using Assets.Scripts.Infrastructure.StaticData;
+using System;
 using UnityEngine;
 
 namespace Assets.Scripts.Infrastructure.Factory
@@ -13,6 +14,8 @@ namespace Assets.Scripts.Infrastructure.Factory
         private readonly IAssetProvider _assetProvider;
         private readonly IStaticDataService _staticData;
        
+        public Action OnTargetCreated;
+
         public Transform TargetTransform { get; private set; }
 
         public GameFactory(IAssetProvider assetProvider, IStaticDataService staticData)
@@ -25,7 +28,7 @@ namespace Assets.Scripts.Infrastructure.Factory
         {
             EnemyStaticData data = _staticData.ForEnemy(type);
 
-            GameObject enemy = Object.Instantiate(data.Prefab, at.position, Quaternion.identity);
+            GameObject enemy = UnityEngine.Object.Instantiate(data.Prefab, at.position, Quaternion.identity);
             var enemyMB = enemy.GetComponent<Enemy>();
             InitTarget();
             InitEnemy(data, enemyMB);
@@ -53,6 +56,7 @@ namespace Assets.Scripts.Infrastructure.Factory
         private void InitTarget()
         {
             TargetTransform = GameObject.FindWithTag(Target).transform;
+            OnTargetCreated?.Invoke();
         }
 
         private void InitEnemy(EnemyStaticData data, Enemy enemyMB)

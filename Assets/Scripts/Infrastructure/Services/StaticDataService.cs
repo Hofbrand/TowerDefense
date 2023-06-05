@@ -27,7 +27,6 @@ namespace Assets.Scripts.Infrastructure.StaticData
         public LevelStaticData ForLevel(string sceneKey)
         {
             var g = _levels.TryGetValue(sceneKey, out LevelStaticData levelStaticData);
-            Debug.LogError(levelStaticData.Waves.Count);
 
             return g  ? levelStaticData : null;
 

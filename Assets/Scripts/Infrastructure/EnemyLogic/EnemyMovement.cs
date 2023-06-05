@@ -12,7 +12,7 @@ public class EnemyMovement : MonoBehaviour
 {
     public NavMeshAgent Agent;
 
-    private const float MinDistance = 1f;
+    private const float MinDistance = 9f;
 
     private Transform target;
     private int wavepointIndex = 0;
@@ -24,11 +24,20 @@ public class EnemyMovement : MonoBehaviour
     {
         _gameFactory = AllServices.Container.Single<IGameFactory>();
         target = _gameFactory.TargetTransform;
-        Debug.LogError(target.gameObject.name);
-        Debug.LogError(target.position);
         enemy = GetComponent<Enemy>();
 
         Agent.destination = target.position;
+    }
+
+    private void Update()
+    {
+        //if target is not reached agent will move
+        if (TargetNotReached())
+        {
+            Agent.destination = target.position;
+            return;
+        }
+        //if target is reached agent will stop
     }
 
     private bool TargetNotReached()

@@ -33,11 +33,6 @@ public class WaveSpawner : MonoBehaviour
         StartCoroutine(SpawnWaves());
     }
 
-    private void Update()
-    {
-        // You can keep any additional logic here, such as updating UI or checking for win conditions
-    }
-
     IEnumerator SpawnWaves()
     {
         while (waveNumber < Waves.Count)

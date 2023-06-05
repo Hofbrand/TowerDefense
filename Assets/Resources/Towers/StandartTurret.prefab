@@ -41,7 +41,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8082534534048722170}
   - component: {fileID: 385401379}
-  m_Layer: 0
+  - component: {fileID: 4209105502491590237}
+  m_Layer: 12
   m_Name: StandartTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,6 +86,19 @@ MonoBehaviour:
   partToRotate: {fileID: 1483179630755938998}
   turnSpeed: 10
   firePoint: {fileID: 7890004731434032572}
+--- !u!135 &4209105502491590237
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8082534534048559322}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 2, z: -1}
 --- !u!1 &8082534534048559326
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,21 +194,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: GFX
       objectReference: {fileID: 0}
-    - target: {fileID: 4625921771630366, guid: 51339d6107dc96a469e865d4642a8641, type: 3}
-      propertyPath: m_RootOrder
+    - target: {fileID: 1120605536951438, guid: 51339d6107dc96a469e865d4642a8641, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1257769497569548, guid: 51339d6107dc96a469e865d4642a8641, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1295281471744204, guid: 51339d6107dc96a469e865d4642a8641, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1390477908414940, guid: 51339d6107dc96a469e865d4642a8641, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500038175341258, guid: 51339d6107dc96a469e865d4642a8641, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608643801739012, guid: 51339d6107dc96a469e865d4642a8641, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1881421316180634, guid: 51339d6107dc96a469e865d4642a8641, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4625921771630366, guid: 51339d6107dc96a469e865d4642a8641, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4625921771630366, guid: 51339d6107dc96a469e865d4642a8641, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4625921771630366, guid: 51339d6107dc96a469e865d4642a8641, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.5
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4625921771630366, guid: 51339d6107dc96a469e865d4642a8641, type: 3}
       propertyPath: m_LocalPosition.x
