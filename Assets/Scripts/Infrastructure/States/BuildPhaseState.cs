@@ -10,7 +10,7 @@ namespace Assets.Scripts.Infrastructure
     {
         private GameStateMachine _gameStateMachine;
         private readonly IGameFactory _gameFactory;
-        private double seconds = 1;
+        private double seconds = 5;
 
         public BuildPhaseState(GameStateMachine gameStateMachine, IGameFactory gameFactory)
         {
