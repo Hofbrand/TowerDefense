@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelKey: Level01
   Waves:
-  - enemy: 0
+  - enemy: 2
     count: 5
     rate: 1
