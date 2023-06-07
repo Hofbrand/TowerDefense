@@ -9,7 +9,7 @@ namespace Assets.Scripts.Turrt
 
         private void Start()
         {
-            HP.OnHPChanged += OnHPChanged;
+            Actor.OnHPChanged += OnHPChanged;
         }
 
         private void OnHPChanged(float hp, float maxHp)
@@ -19,7 +19,7 @@ namespace Assets.Scripts.Turrt
 
         private void OnDestroy()
         {
-            HP.OnHPChanged -= OnHPChanged;
+            Actor.OnHPChanged -= OnHPChanged;
         }
     }
 }

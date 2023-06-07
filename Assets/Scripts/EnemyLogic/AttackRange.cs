@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Serialization;
 using UnityEngine;
 
 namespace Assets.Scripts.Infrastructure.EnemyLogic
@@ -22,6 +23,12 @@ namespace Assets.Scripts.Infrastructure.EnemyLogic
         private void OnTriggerEnter(Collider obj)
         {
             Attack.Enable();
+            TriggerObserver.Death.Happened += OnDeath;
+        }
+
+        private void OnDeath()
+        {
+           Attack.Disable();
         }
     }
 }

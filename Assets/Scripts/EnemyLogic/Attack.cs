@@ -65,8 +65,8 @@ public class Attack : MonoBehaviour
         Debug.LogError("On attack");
         if (Hit(out Collider hit))
         {
-            Debug.Log(hit.name);
-       
+            Debug.Log(hit.gameObject.name);
+            
             hit.transform.GetComponent<HP>().TakeDamage(Damag);
         }
     }

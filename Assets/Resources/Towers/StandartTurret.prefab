@@ -300,6 +300,7 @@ GameObject:
   - component: {fileID: 6881114659381879729}
   - component: {fileID: 5285014993871297897}
   - component: {fileID: 7424501223525510314}
+  - component: {fileID: 7891180378641604410}
   m_Layer: 12
   m_Name: StandartTurret
   m_TagString: Untagged
@@ -414,6 +415,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ImageCur: {fileID: 5203878307699546693}
+--- !u!114 &7891180378641604410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8082534534048559322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d60d1378040902b4580e0067e3a1a89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: {fileID: 6881114659381879729}
 --- !u!1 &8082534534048559326
 GameObject:
   m_ObjectHideFlags: 0

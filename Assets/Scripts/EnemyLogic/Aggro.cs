@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.Turrt;
+using System;
 using UnityEngine;
 
 namespace Assets.Scripts.Infrastructure.EnemyLogic
@@ -28,13 +29,20 @@ namespace Assets.Scripts.Infrastructure.EnemyLogic
         private void SwitchFollowOn()
         {
             Follow.enabled = true;
+            Follow.Agent.isStopped = false;
         }
 
         private void TriggerEnter(Collider obj)
         {
             //consol write info
             Debug.LogError("Aggro TriggerEnter");
+            TriggerObserver.Death.Happened += OnDeath;
             SwitchFollowOff();
+        }
+
+        private void OnDeath()
+        {
+            SwitchFollowOn();
         }
     }
 }
