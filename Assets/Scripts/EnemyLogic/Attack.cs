@@ -1,7 +1,9 @@
+using Assets.Scripts.EnemyLogic;
 using Assets.Scripts.Infrastructure.EnemyLogic;
 using Assets.Scripts.Infrastructure.Factory;
 using Assets.Scripts.Infrastructure.Services;
 using Assets.Scripts.Turrt;
+using System;
 using System.Linq;
 using UnityEngine;
 
@@ -13,6 +15,7 @@ public class Attack : MonoBehaviour
     public float Cleavage = 0.5f;
     public float EffectiveDistance = 1f;
     public int Damag = 10;
+
 
     private IGameFactory _gameFactory;
     private Transform _target;
@@ -51,7 +54,7 @@ public class Attack : MonoBehaviour
 
     private void StartAttack()
     {
-        transform.LookAt(_target);
+      //  transform.LookAt(_target);
         Animator.PlayAttack();
 
         _isAttacking = true;
@@ -59,17 +62,24 @@ public class Attack : MonoBehaviour
 
     private void OnAttack()
     {
+        Debug.LogError("On attack");
         if (Hit(out Collider hit))
         {
             Debug.Log(hit.name);
+       
             hit.transform.GetComponent<HP>().TakeDamage(Damag);
         }
     }
 
+    private Vector3 StartPoint()
+    {
+        return new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z) + transform.forward * EffectiveDistance;
+    }
+
     private bool Hit(out Collider hit)
     {
-        Vector3 startPoint = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z) + transform.forward * EffectiveDistance;
-        int hitsCount = Physics.OverlapSphereNonAlloc(startPoint, Cleavage, _hits, _layerMask);
+        PhysicsDebug.DrawDebug(StartPoint(), Cleavage, 1f);
+        int hitsCount = Physics.OverlapSphereNonAlloc(StartPoint(), Cleavage, _hits, _layerMask);
 
         hit = _hits.FirstOrDefault();
 

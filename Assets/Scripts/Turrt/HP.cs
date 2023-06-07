@@ -19,6 +19,11 @@ namespace Assets.Scripts.Turrt
                 _currentHP = value;
             }
         }
+        
+        private void Start()
+        {
+            CurrentHP = MaxHP;
+        }
 
         public static Action<float, float> OnHPChanged { get; internal set; }
 
