@@ -10,7 +10,7 @@ namespace Assets.Scripts.Infrastructure
     {
         private GameStateMachine _gameStateMachine;
         private readonly IGameFactory _gameFactory;
-        private double seconds = 5;
+        private double seconds = 15;
 
         public BuildPhaseState(GameStateMachine gameStateMachine, IGameFactory gameFactory)
         {
@@ -21,8 +21,8 @@ namespace Assets.Scripts.Infrastructure
         public async void Enter()
         {
             await Task.Delay(TimeSpan.FromSeconds(seconds));
-
             _gameStateMachine.Enter<ActionPhaseState>();
+            _gameFactory.EnableCamera("FPS");
         }
 
         public void Exit()
@@ -32,7 +32,7 @@ namespace Assets.Scripts.Infrastructure
             //turn off hud 
             DisableShop();
             EnableActiobHud();
-           _gameFactory.EnableFPSCamera();
+        //   _gameFactory.EnableCamera("FPS");
         }
 
         private void DisableShop()

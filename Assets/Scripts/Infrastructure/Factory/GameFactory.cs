@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Infrastructure.AssetManagment;
 using Assets.Scripts.Infrastructure.EnemyLogic;
 using Assets.Scripts.Infrastructure.StaticData;
+using Cinemachine;
 using System;
 using UnityEngine;
 
@@ -42,7 +43,7 @@ namespace Assets.Scripts.Infrastructure.Factory
         public void InitWaveSpawner(LevelStaticData levelStaticData)
         {
             WaveSpawner waveSpawner = GameObject.FindWithTag(WaveTag).GetComponent<WaveSpawner>();
-       
+            waveSpawner.TimeBetweenWaves = levelStaticData.TimeBetweenWaves;
             waveSpawner.Waves = levelStaticData.Waves;
         }
 
@@ -67,12 +68,10 @@ namespace Assets.Scripts.Infrastructure.Factory
             enemyMB.startSpeed = data.StartSpeed;   
         }
 
-        public void EnableFPSCamera()
+        public void EnableCamera(string cam)
         {
-            Camera currentCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
-            currentCamera.enabled = false;
-            Camera fps = GameObject.FindWithTag("FPS").GetComponent<Camera>();
-            fps.enabled = true;
+            CinemachineVirtualCamera vCam = GameObject.FindWithTag(cam).GetComponent<CinemachineVirtualCamera>();
+            vCam.MoveToTopOfPrioritySubqueue();
         }
     }
 }

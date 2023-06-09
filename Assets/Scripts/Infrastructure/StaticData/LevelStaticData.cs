@@ -7,7 +7,7 @@ namespace Assets.Scripts.Infrastructure.StaticData
     public class LevelStaticData : ScriptableObject
     {
         public string LevelKey;
-
+        public float TimeBetweenWaves;
         public List<Wave> Waves;
     }
 }

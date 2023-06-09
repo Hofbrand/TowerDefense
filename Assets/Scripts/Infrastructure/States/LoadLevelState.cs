@@ -38,6 +38,7 @@ namespace Assets.Scripts.Infrastructure.States
         private void InitGameWorld()
         {
             _factory.CreateHUD();
+            _factory.EnableCamera("Top");
             InitSpawners();
         }
 

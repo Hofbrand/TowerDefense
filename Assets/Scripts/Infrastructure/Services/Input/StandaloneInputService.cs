@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Assets.Scripts.Infrastructure.Services.Input
 {
@@ -15,6 +16,24 @@ namespace Assets.Scripts.Infrastructure.Services.Input
 
                 return axis;
             }
+        }
+
+        public override Vector3 AxisR
+        {
+            get
+            {
+                Vector3 axis = SimpleInputAxisR();
+
+                if (axis == Vector3.zero)
+                    axis = UnityAxisR();
+
+                return axis;
+            }
+        }
+
+        private Vector3 UnityAxisR()
+        {
+            return new Vector3(UnityEngine.Input.GetAxis(AxisR1), 0, UnityEngine.Input.GetAxis(AxisR2));
         }
 
         private static Vector3 UnityAxis()

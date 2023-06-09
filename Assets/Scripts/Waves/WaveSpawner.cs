@@ -11,12 +11,10 @@ public class WaveSpawner : MonoBehaviour
     public static int EnemiesAlive = 0;
 
     public List<Wave> Waves;
-    public Transform spawnPoint;
+    public Transform SpawnPoint;
+    public float TimeBetweenWaves;
 
-    public float timeBetweenWaves = 1f;
-    public float timeBetweenEnemies = 0.5f; // Delay between spawning each enemy in a wave
-
-    private int waveNumber = 0;
+    private int _waveNumber = 0;
 
     public Text waveCountdownText;
 
@@ -33,34 +31,34 @@ public class WaveSpawner : MonoBehaviour
         StartCoroutine(SpawnWaves());
     }
 
-    IEnumerator SpawnWaves()
+    private IEnumerator SpawnWaves()
     {
-        while (waveNumber < Waves.Count)
+        while (_waveNumber < Waves.Count)
         {
-            Wave wave = Waves[waveNumber];
+            Wave wave = Waves[_waveNumber];
             yield return SpawnWave(wave);
 
-            waveNumber++;
+            _waveNumber++;
 
-            if (waveNumber < Waves.Count)
-                yield return new WaitForSeconds(timeBetweenWaves);
+            if (_waveNumber < Waves.Count)
+                yield return new WaitForSeconds(TimeBetweenWaves);
         }
     }
 
-    IEnumerator SpawnWave(Wave wave)
+    private IEnumerator SpawnWave(Wave wave)
     {
         PlayerStats.Rounds++;
-        EnemiesAlive = wave.count;
+        EnemiesAlive = wave.Count;
 
-        for (int i = 0; i < wave.count; i++)
+        for (int i = 0; i < wave.Count; i++)
         {
-            SpawnEnemy(wave.enemy);
-            yield return new WaitForSeconds(timeBetweenEnemies);
+            SpawnEnemy(wave.Enemy);
+            yield return new WaitForSeconds(wave.TimeBetweenEnemies);
         }
     }
 
     private void SpawnEnemy(EnemyType enemyType)
     {
-        _factory.CreateEnemy(enemyType, spawnPoint);
+        _factory.CreateEnemy(enemyType, SpawnPoint);
     }
 }

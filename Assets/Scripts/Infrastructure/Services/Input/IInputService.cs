@@ -6,6 +6,8 @@ namespace Assets.Scripts.Infrastructure.Services.Input
     {
         Vector3 Axis { get; }
 
+        Vector3 AxisR { get; }
+
         bool IsAttackButtonUp();
     }
 }

@@ -50,7 +50,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.2
-  m_Speed: 10
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -77,7 +77,7 @@ MonoBehaviour:
   startSpeed: 10
   speed: 0
   health: 0
-  startHealth: 100
+  startHealth: 300
   value: 50
   deathEffect: {fileID: 1963329028782052081, guid: 85a995f57d853624483e29710b0fdf49, type: 3}
   healthBar: {fileID: 3338470410176997654}
@@ -269,6 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2427682a99ccd18498d6130495f396cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Death: {fileID: 0}
 --- !u!1 &6640367218368312928
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,7 +547,8 @@ MonoBehaviour:
   Animator: {fileID: 3279902724728460906}
   AttackCooldown: 3
   Cleavage: 0.5
-  EffectiveDistance: 5
+  EffectiveDistance: 6
+  Damag: 45
 --- !u!114 &7550022153213758122
 MonoBehaviour:
   m_ObjectHideFlags: 0

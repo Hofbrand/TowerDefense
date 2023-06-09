@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Level01
   m_EditorClassIdentifier: 
   LevelKey: Level01
+  TimeBetweenWaves: 3
   Waves:
-  - enemy: 0
-    count: 5
-    rate: 1
+  - Enemy: 0
+    Count: 3
+    TimeBetweenEnemies: 5
+  - Enemy: 2
+    Count: 3
+    TimeBetweenEnemies: 3

@@ -2,6 +2,7 @@ using Assets.Scripts.Infrastructure.CameraLogic;
 using Assets.Scripts.Infrastructure.Services;
 using Assets.Scripts.Infrastructure.Services.Input;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class HeroMove : MonoBehaviour
 {
@@ -33,8 +34,20 @@ public class HeroMove : MonoBehaviour
             movementVector.y = 0;
             movementVector.Normalize();
 
-            //transform.forward = movementVector;
+        //    transform.forward = movementVector;
         }
+
+        //rotate gameObjeect by input x axis and y axis
+       // check if input x axis is greater than input y axis by absolute value
+       if(Mathf.Abs(_inputService.AxisR.x) > Mathf.Abs(_inputService.AxisR.z))
+        {
+            transform.Rotate(0, _inputService.AxisR.x, 0);
+            return;
+        }
+        
+        //transform.Rotate(-_inputService.AxisR.z, 0, 0);
+        
+     
 
        // movementVector += Physics.gravity;
 

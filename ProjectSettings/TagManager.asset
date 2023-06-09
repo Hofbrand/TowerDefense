@@ -12,6 +12,7 @@ TagManager:
   - Shop
   - Action
   - CinemachineTarget
+  - Top
   layers:
   - Default
   - TransparentFX
