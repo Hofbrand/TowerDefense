@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 819339717207696492}
-  - component: {fileID: 1778515865}
   - component: {fileID: 156219738652992213}
   - component: {fileID: -8026387725529204740}
   - component: {fileID: 9050591981724093906}
@@ -44,26 +43,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1778515865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 404408136365595534}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e81f661ab7b27cb49b5e0275b6919a2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startSpeed: 10
-  speed: 0
-  health: 0
-  Animator: {fileID: 9050591981724093906}
-  startHealth: 100
-  value: 50
-  deathEffect: {fileID: 1963329028782052081, guid: 759b1da22b5af6940829cb82ea913f44, type: 3}
-  healthBar: {fileID: 3338470410176997654}
 --- !u!114 &156219738652992213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16981ce819e6e0848935145cc5dd3918, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyAnimator: {fileID: 0}
   MaxHP: 100
 --- !u!114 &-6043417137920936217
 MonoBehaviour:

@@ -42,15 +42,5 @@ namespace Assets.Scripts.Infrastructure.EnemyLogic
         {
             SwitchFollowOn();
         }
-
-        private void OnTakeHit()
-        {
-            SwitchFollowOff();
-        }
-
-        private void OnHitEnded()
-        {
-            SwitchFollowOn();
-        }
     }
 }
