@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Infrastructure.AssetManagment;
 using Assets.Scripts.Infrastructure.EnemyLogic;
 using Assets.Scripts.Infrastructure.StaticData;
+using Assets.Scripts.Turrt;
 using Cinemachine;
 using System;
 using UnityEngine;
@@ -30,9 +31,8 @@ namespace Assets.Scripts.Infrastructure.Factory
             EnemyStaticData data = _staticData.ForEnemy(type);
 
             GameObject enemy = UnityEngine.Object.Instantiate(data.Prefab, at.position, Quaternion.identity);
-            var enemyMB = enemy.GetComponent<Enemy>();
             InitTarget();
-            InitEnemy(data, enemyMB);
+            InitEnemy(data, enemy);
         }
 
         public void CreateHUD()
@@ -60,12 +60,14 @@ namespace Assets.Scripts.Infrastructure.Factory
             OnTargetCreated?.Invoke();
         }
 
-        private void InitEnemy(EnemyStaticData data, Enemy enemyMB)
+        private void InitEnemy(EnemyStaticData data, GameObject enemy)
         {
-            enemyMB.health = data.StartHealth;
-            enemyMB.value = data.Value;
-            enemyMB.deathEffect = data.DeathEffect;
-            enemyMB.startSpeed = data.StartSpeed;   
+            var hp = enemy.GetComponent<HP>();
+            var death = enemy.GetComponent<Death>();
+            hp.MaxHP = data.StartHealth;
+         //   enemyMB.value = data.Value;
+          //  enemyMB.deathEffect = data.DeathEffect;
+        //    enemyMB.startSpeed = data.StartSpeed;   
         }
 
         public void EnableCamera(string cam)

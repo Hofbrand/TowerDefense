@@ -4,7 +4,6 @@ using UnityEngine;
 public class Turret : MonoBehaviour
 {
     private Transform target;
-    private Enemy targetEnemy;
 
     [Header("General")]
     public float range = 15f;
@@ -49,7 +48,6 @@ public class Turret : MonoBehaviour
         if (nearest != null && shortestDistance <= range)
         {
             target = nearest.transform;
-            targetEnemy = nearest.GetComponent<Enemy>();
         }
         else
         {
@@ -62,7 +60,7 @@ public class Turret : MonoBehaviour
     {
         if (target == null)
             return;
-        //target lock on
+     
         LockOnTarget();
 
         if (fireCountdown <= 0f)
@@ -79,10 +77,6 @@ public class Turret : MonoBehaviour
     void LockOnTarget()
     {
         gameObject.transform.LookAt(target);
-        //Vector3 dir = target.position - transform.position;
-        //Quaternion lookRotation = Quaternion.LookRotation(dir);
-        //Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        //partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
 
     private void OnDrawGizmosSelected()
@@ -95,6 +89,7 @@ public class Turret : MonoBehaviour
     {
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
+
         if (bullet != null)
         {
             bullet.Seek(target);

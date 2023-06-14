@@ -8,7 +8,7 @@ namespace Assets.Scripts.Infrastructure.StaticData
         public EnemyType Type;
 
         [Range(1f, 1000f)]
-        public float StartHealth;
+        public int StartHealth;
         [Range(1f, 100f)]
         public float StartSpeed;
         [Range(1,100)]

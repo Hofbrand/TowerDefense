@@ -11,6 +11,7 @@ namespace Assets.Scripts.Infrastructure.EnemyLogic
         public float speed;
         [HideInInspector]
         public float health;
+        public EnemyAnimator Animator;
 
         public float startHealth = 100;
 
@@ -23,14 +24,11 @@ namespace Assets.Scripts.Infrastructure.EnemyLogic
         [Header("Unity stuff")]
         public Image healthBar;
 
-        private void Start()
-        {
-            speed = startSpeed;
-            health = startHealth;
-        }
+
         public void TakeDamage(float amount)
         {
             health -= amount;
+            Animator.PlayHit();
 
             healthBar.fillAmount = health / startHealth;
 
@@ -38,11 +36,6 @@ namespace Assets.Scripts.Infrastructure.EnemyLogic
             {
                 Die();
             }
-        }
-
-        public void Slow(float pct)
-        {
-            speed = startSpeed * (1f - pct);
         }
 
         void Die()
@@ -55,8 +48,8 @@ namespace Assets.Scripts.Infrastructure.EnemyLogic
             Destroy(effect, 5f);
 
             WaveSpawner.EnemiesAlive--;
-
-            Destroy(gameObject);
+            Animator.PlayDeath();
+            Destroy(gameObject,2f);
         }
     }
 }

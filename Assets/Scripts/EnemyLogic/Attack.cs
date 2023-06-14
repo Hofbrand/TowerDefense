@@ -44,7 +44,9 @@ public class Attack : MonoBehaviour
         if (CanAttack())
             StartAttack();
     }
+
     public void Enable() => _isAttackEnabled = true;
+
     public void Disable() => _isAttackEnabled = false;
 
     private bool CanAttack()
@@ -54,7 +56,6 @@ public class Attack : MonoBehaviour
 
     private void StartAttack()
     {
-      //  transform.LookAt(_target);
         Animator.PlayAttack();
 
         _isAttacking = true;
@@ -62,7 +63,6 @@ public class Attack : MonoBehaviour
 
     private void OnAttack()
     {
-        Debug.LogError("On attack");
         if (Hit(out Collider hit))
         {
             Debug.Log(hit.gameObject.name);
@@ -93,6 +93,4 @@ public class Attack : MonoBehaviour
     }
 
     private void OnTargetCreated() => _target = _gameFactory.TargetTransform.transform;
-
-
 }

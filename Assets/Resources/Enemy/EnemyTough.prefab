@@ -77,6 +77,7 @@ MonoBehaviour:
   startSpeed: 10
   speed: 0
   health: 0
+  Animator: {fileID: 3279902724728460906}
   startHealth: 300
   value: 50
   deathEffect: {fileID: 1963329028782052081, guid: 85a995f57d853624483e29710b0fdf49, type: 3}

@@ -34,13 +34,21 @@ namespace Assets.Scripts.Infrastructure.EnemyLogic
 
         private void TriggerEnter(Collider obj)
         {
-            //consol write info
-            Debug.LogError("Aggro TriggerEnter");
             TriggerObserver.Death.Happened += OnDeath;
             SwitchFollowOff();
         }
 
         private void OnDeath()
+        {
+            SwitchFollowOn();
+        }
+
+        private void OnTakeHit()
+        {
+            SwitchFollowOff();
+        }
+
+        private void OnHitEnded()
         {
             SwitchFollowOn();
         }

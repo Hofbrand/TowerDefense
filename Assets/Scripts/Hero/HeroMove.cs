@@ -17,13 +17,6 @@ public class HeroMove : MonoBehaviour
         _inputService = AllServices.Container.Single<IInputService>();
     }
 
-    private void Start()
-    {
-        _camera = GameObject.FindGameObjectWithTag("FPS").GetComponent<Camera>();
-
-        _camera.GetComponent<FPSCameraController>().Follow(this.gameObject);
-    }
-
     public void Update()
     {
         Vector3 movementVector = Vector3.zero;

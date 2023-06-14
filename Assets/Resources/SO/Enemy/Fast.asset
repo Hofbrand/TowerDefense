@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Fast
   m_EditorClassIdentifier: 
   Type: 1
-  StartHealth: 30
-  StartSpeed: 30
+  StartHealth: 100
+  StartSpeed: 3
   Value: 5
-  Prefab: {fileID: 404408136365595534, guid: c011513f596063b48915225f2002d572, type: 3}
+  Prefab: {fileID: 6766060067705973382, guid: 7fcb64980ddb0c1459c5d20c9a718cc8, type: 3}
   DeathEffect: {fileID: 1963329028782052081, guid: 0c90af91f08cec9408e4136366d4ee6b, type: 3}

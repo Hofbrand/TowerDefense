@@ -55,6 +55,7 @@ MonoBehaviour:
   startSpeed: 10
   speed: 0
   health: 0
+  Animator: {fileID: 9050591981724093906}
   startHealth: 100
   value: 50
   deathEffect: {fileID: 1963329028782052081, guid: 759b1da22b5af6940829cb82ea913f44, type: 3}
@@ -346,6 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2427682a99ccd18498d6130495f396cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Death: {fileID: 0}
 --- !u!1 &8906789060864960847
 GameObject:
   m_ObjectHideFlags: 0

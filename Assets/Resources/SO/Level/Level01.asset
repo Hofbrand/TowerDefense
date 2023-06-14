@@ -15,9 +15,6 @@ MonoBehaviour:
   LevelKey: Level01
   TimeBetweenWaves: 3
   Waves:
-  - Enemy: 0
+  - Enemy: 1
     Count: 3
     TimeBetweenEnemies: 5
-  - Enemy: 2
-    Count: 3
-    TimeBetweenEnemies: 3
