@@ -8,16 +8,25 @@ namespace Assets.Scripts.Turrt
     {
         public Action Happened;
         public EnemyAnimator EnemyAnimator;
-
         public HP HP;
+        public bool IsDead => HP.CurrentHP <= 0;
 
-        private void Start() => HP.OnHPChanged += HPChanged;
+        private void Start()
+        {
+            HP.OnHPChanged += HPChanged;
+        }
+
+        private void Died()
+        {
+            Destroy(gameObject);    
+        }
 
         private void OnDestroy()
         => HP.OnHPChanged -= HPChanged;
 
         private void HPChanged(float arg1, float arg2)
         {
+            Debug.Log($"HP changed from {arg1} to {arg2}");
             if (HP.CurrentHP <= 0)
                 Die();
         }
@@ -26,10 +35,9 @@ namespace Assets.Scripts.Turrt
         {
             Happened?.Invoke();
 
+            Debug.LogError((EnemyAnimator != null) + "EnemyAnimator != null");
             if (EnemyAnimator != null)
                 EnemyAnimator.PlayDeath();
-
-            Destroy(gameObject, 2f);
         }
     }
 }

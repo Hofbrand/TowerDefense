@@ -119,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TriggerObserver: {fileID: 9211733283007350584}
   Follow: {fileID: 156219738652992213}
+  MyDeath: {fileID: 5550568892056280336}
 --- !u!114 &-6131883514073701611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16981ce819e6e0848935145cc5dd3918, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyAnimator: {fileID: 0}
+  EnemyAnimator: {fileID: 9050591981724093906}
   MaxHP: 100
 --- !u!114 &-6043417137920936217
 MonoBehaviour:
@@ -158,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d60d1378040902b4580e0067e3a1a89e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyAnimator: {fileID: 0}
+  EnemyAnimator: {fileID: 9050591981724093906}
   HP: {fileID: -6131883514073701611}
 --- !u!114 &-3178518223611919261
 MonoBehaviour:

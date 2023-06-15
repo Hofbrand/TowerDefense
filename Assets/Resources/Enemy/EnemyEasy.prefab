@@ -1172,15 +1172,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 819339717207696492, guid: 786d9a63f9779fc41b2b3ddac44df154, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.433642
       objectReference: {fileID: 0}
     - target: {fileID: 819339717207696492, guid: 786d9a63f9779fc41b2b3ddac44df154, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.4653412
       objectReference: {fileID: 0}
     - target: {fileID: 819339717207696492, guid: 786d9a63f9779fc41b2b3ddac44df154, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.287792
+      value: 0.069120884
       objectReference: {fileID: 0}
     - target: {fileID: 819339717207696492, guid: 786d9a63f9779fc41b2b3ddac44df154, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1210,6 +1210,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3613934362819257352, guid: 786d9a63f9779fc41b2b3ddac44df154, type: 3}
+      propertyPath: MyDeath
+      value: 
+      objectReference: {fileID: 1548943851414203416}
     - target: {fileID: 5550568892056280336, guid: 786d9a63f9779fc41b2b3ddac44df154, type: 3}
       propertyPath: EnemyAnimator
       value: 

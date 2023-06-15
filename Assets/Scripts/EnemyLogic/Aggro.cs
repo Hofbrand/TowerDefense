@@ -8,9 +8,11 @@ namespace Assets.Scripts.Infrastructure.EnemyLogic
     {
         public TriggerObserver TriggerObserver;
         public EnemyMovement Follow;
+        public Death MyDeath;
 
         private void Start()
         {
+            MyDeath.Happened += OnMyDeath;
             TriggerObserver.TriggerEnter += TriggerEnter;
             TriggerObserver.TriggerExit += TriggerExit;
         }
@@ -40,7 +42,28 @@ namespace Assets.Scripts.Infrastructure.EnemyLogic
 
         private void OnDeath()
         {
+           SwitchFollowOn();
+        }
+
+        private void OnMyDeath()
+        {
+            SwitchFollowOff();
+        }
+
+        private void OnTakeHit()
+        {
+            SwitchFollowOff();
+        }
+
+        private void OnHitEnded()
+        {
             SwitchFollowOn();
+        }
+
+        private void OnDestroy()
+        {
+            TriggerObserver.TriggerEnter -= TriggerEnter;
+            TriggerObserver.TriggerExit -= TriggerExit;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Infrastructure.EnemyLogic;
+using Assets.Scripts.Turrt;
 using UnityEngine;
 
 public class Turret : MonoBehaviour
@@ -40,6 +41,9 @@ public class Turret : MonoBehaviour
             float distance = Vector3.Distance(transform.position, enemy.transform.position);
             if (distance < shortestDistance)
             {
+                if(enemy.GetComponent<Death>().IsDead)
+                    continue;
+               
                 shortestDistance = distance;
                 nearest = enemy;
             }
