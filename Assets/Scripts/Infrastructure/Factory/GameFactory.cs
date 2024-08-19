@@ -65,9 +65,10 @@ namespace Assets.Scripts.Infrastructure.Factory
             var hp = enemy.GetComponent<HP>();
             var death = enemy.GetComponent<Death>();
             hp.MaxHP = data.StartHealth;
-         //   enemyMB.value = data.Value;
-          //  enemyMB.deathEffect = data.DeathEffect;
-        //    enemyMB.startSpeed = data.StartSpeed;   
+            //var enemyMb = enemy.GetComponent<Enemy>();
+            //enemyMb.value = data.Value;
+            //enemyMb.deathEffect = data.DeathEffect;
+            //enemyMb.startSpeed = data.StartSpeed;
         }
 
         public void EnableCamera(string cam)

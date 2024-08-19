@@ -18,3 +18,6 @@ MonoBehaviour:
   - Enemy: 1
     Count: 3
     TimeBetweenEnemies: 5
+  - Enemy: 2
+    Count: 3
+    TimeBetweenEnemies: 5

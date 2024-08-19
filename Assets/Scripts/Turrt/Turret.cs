@@ -40,8 +40,9 @@ public class Turret : MonoBehaviour
         {
             float distance = Vector3.Distance(transform.position, enemy.transform.position);
             if (distance < shortestDistance)
-            {
-                if(enemy.GetComponent<Death>().IsDead)
+            { 
+                enemy.TryGetComponent<Death>(out var death);
+                if(death != null && death.IsDead)
                     continue;
                
                 shortestDistance = distance;

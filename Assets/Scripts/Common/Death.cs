@@ -35,9 +35,10 @@ namespace Assets.Scripts.Turrt
         {
             Happened?.Invoke();
 
-            Debug.LogError((EnemyAnimator != null) + "EnemyAnimator != null");
             if (EnemyAnimator != null)
                 EnemyAnimator.PlayDeath();
+
+            Died();
         }
     }
 }

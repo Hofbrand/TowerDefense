@@ -42,6 +42,7 @@ namespace Assets.Scripts.Infrastructure.EnemyLogic
 
         private void OnDeath()
         {
+            
            SwitchFollowOn();
         }
 
